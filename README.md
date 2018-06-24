@@ -1,11 +1,4 @@
-# Docker for Bayesian Logic Programming (BLOG)
-
-# Purpose
-To provide Docker for Bayesian Logic Programming (BLOG)
-
-# Resources
-1. [BLOG Programming](https://bayesianlogic.github.io/pages/download.html)
-2. [Run Examples](https://bayesianlogic.github.io/pages/get-started.html)
+# Docker for Sublime_Text 3
 
 # Run (Editor with Sublime_Text3)
 To run the simple example build image; it will pop up Sublime_Text(v3) GUI Editor with default "burglary.blog".
@@ -30,4 +23,9 @@ You can try run the "butglary.blog"
 
 # Issues
 Sublime latest version requiring the installation of big package GTK 2.0 or 3.0. Hence, the image will be much larger!
+
+# Resources
+1. [BLOG Programming](https://bayesianlogic.github.io/pages/download.html)
+2. [Run Examples](https://bayesianlogic.github.io/pages/get-started.html)
+
 
