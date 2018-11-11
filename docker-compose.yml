@@ -3,7 +3,8 @@ services:
   docker-blog-bayesian:
     image: openkbs/docker-blog-bayesian
     build:
-      context: ./Dockerfile
+      context: .
+      dockerfile: Dockerfile
     container_name: docker-blog-bayesian
     environment:
       - USER_ID=${USER_ID:-1000}
