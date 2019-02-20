@@ -21,12 +21,11 @@ ENV SUBLIME_DIR=${SUBLIME_DIR}
 ARG SUBLIME_EXE=${SUBLIME_EXE:-${INSTALL_DIR}/${SUBLIME_DIR}/sublime_text}
 ENV SUBLIME_EXE=${SUBLIME_EXE}
 
-RUN \
-    apt-get update -y && \
-    apt-get install gtk+3.0 -y && \
-    wget -c ${SUBLIME_URL} && \
-    tar -vxjf ${SUBLIME_TGZ} && \
-    rm ${SUBLIME_TGZ}
+RUN sudo apt-get update -y && \
+    sudo apt-get install gtk+3.0 -y && \
+    sudo wget -q -c ${SUBLIME_URL} && \
+    sudo tar -vxjf ${SUBLIME_TGZ} && \
+    sudo rm ${SUBLIME_TGZ}
     
 RUN ls -al ${INSTALL_DIR}/${SUBLIME_DIR} && \
     ls -al ${TARGET_HOME} && \
@@ -37,7 +36,7 @@ COPY editors/blog-for-sublime/blog* ${HOME}/.config/sublime-text-3/Packages/User
 COPY example/*.blog ${HOME}/example/
 
 RUN ls -al ${HOME}/workspace && \
-    /bin/chown -R ${USER_ID}:${USER_ID} ${HOME}/.config ${HOME}/data ${HOME}/workspace && \
+    sudo /bin/chown -R ${USER_ID}:${USER_ID} ${HOME}/.config ${HOME}/data ${HOME}/workspace && \
     ls -al ${HOME}/.config/sublime-text-3/Packages/User/ && \
     find ${HOME}/.config && \
     find ${HOME}/workspace
